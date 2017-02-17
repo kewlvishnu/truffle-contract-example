@@ -1,0 +1,21 @@
+{
+  "name": "truffleBasic",
+  "homepage": "https://github.com/ianmonkuk/truffleBasic",
+  "authors": [
+    "ianmonkuk"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "web3": "^0.18.2"
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="./bower_components/web3/dist/web3.min.js"></script>
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./javascript/truffle-contract/dist/truffle-contract.js"></script>
+    <script>
+      window.onload = function() {
+
+        if (typeof web3 !== 'undefined') {
+          web3 = new Web3(web3.currentProvider);
+        } else {
+          // set the provider you want from Web3.providers
+          web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        }
+
+        $.getJSON("./contracts/MetaCoin.json", function(MetaCoin_json) {
+            var MyContract = web3.eth.contract( MetaCoin_json.abi ).at("0xc208fd1234f928dbd1dd2006b9cf74f4f14f6c84");
+            MyContract.getBalance.call(web3.eth.accounts[2], function( err, balance ) {
+              document.body.innerHTML = document.body.innerHTML  + " balance " + balance;
+            });
+        })
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
