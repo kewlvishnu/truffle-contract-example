@@ -1,1 +1,2 @@
 # truffle-contract-example
+test
